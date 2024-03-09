@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<title>イマソラChat!</title>
+<link rel="stylesheet" href="css/sample.css">
+</head>
+<body>
+    <header>
+    <div img src="tanabata_publicdomainq-0009100lxlarb.png" width="350"></div>
+<h1>イマソラCHAT！</h1>
+<h2>みんなの今のそら情報で世界とつながろう</h2>
+</header>
+<main>
+<h1></h1>
+<script>
+   //今日の日付データを変数hidukeに格納
+  var hiduke=new Date();   
+  //年・月・日・曜日を取得する
+  var year = hiduke.getFullYear();
+  var month = hiduke.getMonth()+1;
+  var week = hiduke.getDay();
+  var day = hiduke.getDate();  
+  var yobi= new Array("日","月","火","水","木","金","土");  
+  document.write(year+"年"+month+"月"+day+"日 "+yobi[week]+"曜日");
+  </script>
+<form method="post" enctype="application/x-www-form-urlencoded" id="koyomi" name="koyomi">
+   <div><select name="id"  class="city" id="id" onchange="submit();" title="都市名"> -->
+  <optgroup label="北海道">
+  <option value="00">札幌(北海道)</option>
+  <option value="01">根室(北海道)</option>
+  </optgroup>
+  <optgroup label="東北地方"> 
+  <option value="02">青森(青森県)</option>
+  <option value="03">盛岡(岩手県)</option>
+  <option value="04">仙台(宮城県)</option>
+  <option value="05">秋田(秋田県)</option>
+  <option value="06">山形(山形県)</option>
+  <option value="07">福島(福島県)</option>
+  </optgroup>
+  <optgroup label="関東地方">
+  <option value="08">水戸(茨城県)</option>
+  <option value="09">宇都宮(栃木県)</option>
+  <option value="10">前橋(群馬県)</option>
+  <option value="11">さいたま(埼玉県)</option>
+  <option value="12">千葉(千葉県)</option>
+  <option selected="selected" value="13">東京(東京都)</option>
+  <option value="14">小笠原[父島](東京都)</option>
+  <option value="15">横浜(神奈川県)</option>
+  </optgroup>
+  <optgroup label="中部地方">
+  <option value="16">新潟(新潟県)</option>
+  <option value="17">富山(富山県)</option>
+  <option value="18">金沢(石川県)</option>
+  <option value="19">福井(福井県)</option>
+  <option value="20">甲府(山梨県)</option>
+  <option value="21">長野(長野県)</option>
+  <option value="22">岐阜(岐阜県)</option>
+  <option value="23">静岡(静岡県)</option>
+  <option value="24">名古屋(愛知県)</option>
+  </optgroup>
+  <optgroup label="近畿地方">
+  <option value="25">津(三重県)</option>
+  <option value="26">大津(滋賀県)</option>
+  <option value="27">京都(京都府)</option>
+  <option value="28">大阪(大阪府)</option>
+  <option value="29">神戸(兵庫県)</option>
+  <option value="30">奈良(奈良県)</option>
+  <option value="31">和歌山(和歌山県)</option>
+  </optgroup>
+  <optgroup label="中国地方">
+  <option value="32">鳥取(鳥取県)</option>
+  <option value="33">松江(島根県)</option>
+  <option value="34">岡山(岡山県)</option>
+  <option value="35">広島(広島県)</option>
+  <option value="36">山口(山口県)</option>
+  </optgroup>
+  <optgroup label="四国地方">
+  <option value="37">徳島(徳島県)</option>
+  <option value="38">高松(香川県)</option>
+  <option value="39">松山(愛媛県)</option>
+  <option value="40">高知(高知県)</option>
+  </optgroup>
+  <optgroup label="九州地方">
+  <option value="41">福岡(福岡県)</option>
+  <option value="42">佐賀(佐賀県)</option>
+  <option value="43">長崎(長崎県)</option>
+  <option value="44">熊本(熊本県)</option>
+  <option value="45">大分(大分県)</option>
+  <option value="46">宮崎(宮崎県)</option>
+  <option value="47">鹿児島(鹿児島県)</option>
+  <option value="48">那覇(沖縄県)</option>
+  <option value="49">石垣島(沖縄県)</option>
+  </optgroup>
+  </select></div></h3>
+  <p><本日の星空>
+  <br>3月９日 東京　日の出6:00　日の入り17:43　月の出5:26　月の入り17:43　月齢28.2
+  <br>3月10日 東京　日の出5:59　日の入り17:44　月の出5:59　月の入り17:34　月齢29.2(新月)
+  </P>
+<p><今日はナンノヒ？>
+<br>3月9日　世界で初めて宇宙飛行した人ガガーリンの誕生日
+<br>3月9日　日本民間ロケット「カイロス」打ち上げ！→延期になりました
+</p>
+<h1>いまの空と宇宙と。
+  <br>XXX　イマソラ　チャット　XXX</h1>
+<!-- コンテンツ表示画面 -->
+<div>
+    <div> 名前：<input type="text" id="uname"> </div>
+    <div>
+        <textarea id="text" cols="30" rows="10"></textarea>
+        <button id="send">送信</button>
+    </div>
+    <div id="output" style="overflow: auto; height: 500px;"></div>
+</div>
+<!--/ コンテンツ表示画面 -->
+<!-- JQuery -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<!-- JQuery -->
+</main>
+<footer><small>Star&Moon協会</small></footer>
+<!--** 以下Firebase **-->
+<script type="module">
+    // Import the functions you need from the SDKs you need ここは新しいバージョンにより変わるので注意。
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/10.8.1/firebase-app.js";
+    import { getDatabase, ref, push, set, onChildAdded, remove, onChildRemoved } 
+    from "https://www.gstatic.com/firebasejs/10.8.1/firebase-database.js";
+    // TODO: Add SDKs for Firebase products that you want to use
+    // https://firebase.google.com/docs/web/setup#available-libraries
+  
+    // Your web app's Firebase configuration
+    const firebaseConfig = {
+      apiKey: "AIzaSyDCaIRC-am67RiTjBX4oo7EvvVfqA-OhgU",
+      authDomain: "sample-1bb6f.firebaseapp.com",
+      projectId: "sample-1bb6f",
+      storageBucket: "sample-1bb6f.appspot.com",
+      messagingSenderId: "596422715342",
+      appId: "1:596422715342:web:e90dcf20d53c1e261dad9f"
+    };
+  
+    // Initialize Firebase
+    const app = initializeApp(firebaseConfig);
+    const db = getDatabase(app);
+    const dbRef = ref(db, "chat");
+    // chatの記述をmemo1、memo2とふりわけたいとき
+    // const dbRef = ref(db, "chat/memo1")
+
+    // 送信
+$("#send").on("click",function(){
+  const msg = {
+    uname : $("#uname").val(),
+    text : $("#text").val()
+     } 
+  const newPostRef = push(dbRef); //チャットデータにユニークキーを生成
+    // console.log(newPostRef);
+  set(newPostRef,msg); 
+// 送信 取得確認版
+// $("#send").on("click",function(){
+//   const uname = $("#uname").val();
+//   const text = $("#text").val();
+//   alert(uname + text); //   取得確認
+});
+//データ取得
+onChildAdded(dbRef, function(data){   
+    const msg  = data.val();    //オブジェクトデータを取得し、変数msgに代入
+    const key  = data.key;      //データのユニークキー
+    let h = '<p>';
+        h += msg.uname;
+        h += '<br>';
+        h += msg.text;
+        h += '</p>';
+        $("#output").append(h); //#outputの最後に追加。前のmsgの後に次のmsgが来る。
+});
+</script>
+</body>
+</html>
